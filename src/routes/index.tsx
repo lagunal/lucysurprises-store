@@ -22,7 +22,7 @@ const TESTIMONIALS = [
   {
     quote: "Lucy transformed my daughter's quinceañera into a dream. Every detail was breathtaking.",
     name: "Sofia R.",
-    role: "Quinceañera, Miami",
+    role: "Quinceañera, Meriden",
   },
   {
     quote: "The balloon arch for our grand opening was stunning. Our clients kept asking who did it!",
@@ -49,7 +49,7 @@ function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24 lg:px-8">
           <div className="flex flex-col justify-center">
             <p className="inline-flex items-center gap-2 self-start rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary">
-              <Sparkles className="h-3.5 w-3.5" /> Miami's balloon studio
+              <Sparkles className="h-3.5 w-3.5" /> Meriden's balloon studio
             </p>
             <h1 className="mt-5 font-display text-5xl leading-[1.05] sm:text-6xl md:text-7xl">
               Designing lasting <span className="text-primary">balloon</span> creations.

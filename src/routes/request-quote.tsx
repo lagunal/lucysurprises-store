@@ -68,7 +68,7 @@ function QuotePage() {
             <div className="space-y-3 pt-2 text-sm">
               <div className="flex items-center gap-3"><Phone className="h-4 w-4 text-primary" /> (305) 555-1234</div>
               <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> hello@lucysurprises.com</div>
-              <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-primary" /> Miami, FL</div>
+              <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-primary" /> Meriden, CT</div>
             </div>
           </aside>
         </div>
