@@ -140,7 +140,7 @@ function Home() {
             </h2>
             <p className="mt-5 text-muted-foreground">
               Choose a ready-made bouquet or work with Lucy on a custom design. We deliver across
-              Miami and handle setup so you can focus on the moment.
+              Meriden and handle setup so you can focus on the moment.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {["Custom color palettes", "Hand-tied bouquets", "Full setup & takedown", "Same-week rush available"].map((f) => (
