@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ThemesRouteImport } from './routes/themes'
+import { Route as RequestQuoteRouteImport } from './routes/request-quote'
+import { Route as OccasionsRouteImport } from './routes/occasions'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as DecorationsRouteImport } from './routes/decorations'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as BouquetsRouteImport } from './routes/bouquets'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ThemesRoute = ThemesRouteImport.update({
+  id: '/themes',
+  path: '/themes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestQuoteRoute = RequestQuoteRouteImport.update({
+  id: '/request-quote',
+  path: '/request-quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OccasionsRoute = OccasionsRouteImport.update({
+  id: '/occasions',
+  path: '/occasions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DecorationsRoute = DecorationsRouteImport.update({
+  id: '/decorations',
+  path: '/decorations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BouquetsRoute = BouquetsRouteImport.update({
+  id: '/bouquets',
+  path: '/bouquets',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bouquets': typeof BouquetsRoute
+  '/cart': typeof CartRoute
+  '/decorations': typeof DecorationsRoute
+  '/gallery': typeof GalleryRoute
+  '/occasions': typeof OccasionsRoute
+  '/request-quote': typeof RequestQuoteRoute
+  '/themes': typeof ThemesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bouquets': typeof BouquetsRoute
+  '/cart': typeof CartRoute
+  '/decorations': typeof DecorationsRoute
+  '/gallery': typeof GalleryRoute
+  '/occasions': typeof OccasionsRoute
+  '/request-quote': typeof RequestQuoteRoute
+  '/themes': typeof ThemesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bouquets': typeof BouquetsRoute
+  '/cart': typeof CartRoute
+  '/decorations': typeof DecorationsRoute
+  '/gallery': typeof GalleryRoute
+  '/occasions': typeof OccasionsRoute
+  '/request-quote': typeof RequestQuoteRoute
+  '/themes': typeof ThemesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bouquets'
+    | '/cart'
+    | '/decorations'
+    | '/gallery'
+    | '/occasions'
+    | '/request-quote'
+    | '/themes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bouquets'
+    | '/cart'
+    | '/decorations'
+    | '/gallery'
+    | '/occasions'
+    | '/request-quote'
+    | '/themes'
+  id:
+    | '__root__'
+    | '/'
+    | '/bouquets'
+    | '/cart'
+    | '/decorations'
+    | '/gallery'
+    | '/occasions'
+    | '/request-quote'
+    | '/themes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BouquetsRoute: typeof BouquetsRoute
+  CartRoute: typeof CartRoute
+  DecorationsRoute: typeof DecorationsRoute
+  GalleryRoute: typeof GalleryRoute
+  OccasionsRoute: typeof OccasionsRoute
+  RequestQuoteRoute: typeof RequestQuoteRoute
+  ThemesRoute: typeof ThemesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/themes': {
+      id: '/themes'
+      path: '/themes'
+      fullPath: '/themes'
+      preLoaderRoute: typeof ThemesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-quote': {
+      id: '/request-quote'
+      path: '/request-quote'
+      fullPath: '/request-quote'
+      preLoaderRoute: typeof RequestQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/occasions': {
+      id: '/occasions'
+      path: '/occasions'
+      fullPath: '/occasions'
+      preLoaderRoute: typeof OccasionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/decorations': {
+      id: '/decorations'
+      path: '/decorations'
+      fullPath: '/decorations'
+      preLoaderRoute: typeof DecorationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bouquets': {
+      id: '/bouquets'
+      path: '/bouquets'
+      fullPath: '/bouquets'
+      preLoaderRoute: typeof BouquetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +197,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BouquetsRoute: BouquetsRoute,
+  CartRoute: CartRoute,
+  DecorationsRoute: DecorationsRoute,
+  GalleryRoute: GalleryRoute,
+  OccasionsRoute: OccasionsRoute,
+  RequestQuoteRoute: RequestQuoteRoute,
+  ThemesRoute: ThemesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
