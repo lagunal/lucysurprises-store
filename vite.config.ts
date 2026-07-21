@@ -5,15 +5,15 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
 export default defineConfig({
+  build: {
+    outDir: '.output',
+  },
   plugins: [
     tanstackStart({
       server: {
         preset: "node-server",
         entry: "src/server.ts"
       },
-      build: {
-        outDir: '.dist',
-      }
     }),
     react(),
     tailwindcss(),
