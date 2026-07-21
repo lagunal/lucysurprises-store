@@ -12,7 +12,7 @@ export default defineConfig({
         entry: "src/server.ts"
       },
       build: {
-        outDir: '.output',
+        outDir: '.dist',
       }
     }),
     react(),
