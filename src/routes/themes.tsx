@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { QuoteCTA } from "@/components/site/QuoteCTA";
-import { PRODUCTS } from "@/lib/mock-data";
+import { getWooProducts } from "@/lib/woocommerce";
 
 export const Route = createFileRoute("/themes")({
+  loader: async () => await getWooProducts({ data: "Themes" }),
   head: () => ({
     meta: [
       { title: "Themed Setups — Lucy Surprises" },
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/themes")({
 });
 
 function ThemesPage() {
-  const items = PRODUCTS.filter((p) => p.category === "Themes");
+  const items = Route.useLoaderData();
   return (
     <>
       <PageHero eyebrow="Themes" title="Bring your theme to life" description="Choose a curated theme or dream up your own — we'll bring it to life in balloons." />

@@ -73,8 +73,8 @@ function CartPage() {
                 <div className="my-3 border-t border-border/60" />
                 <div className="flex justify-between text-base"><dt className="font-semibold">Estimated total</dt><dd className="font-display text-xl text-primary">${subtotal.toFixed(2)}</dd></div>
               </dl>
-              <Button disabled size="lg" className="mt-6 w-full rounded-full">
-                Proceed to checkout — coming soon
+              <Button asChild size="lg" className="mt-6 w-full rounded-full">
+                <a href="https://lucysurprises.com/checkout/">Proceed to checkout</a>
               </Button>
               <Button asChild variant="outline" size="lg" className="mt-3 w-full rounded-full">
                 <Link to="/bouquets">Continue shopping</Link>

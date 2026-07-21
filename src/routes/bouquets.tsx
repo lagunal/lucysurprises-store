@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { QuoteCTA } from "@/components/site/QuoteCTA";
-import { PRODUCTS } from "@/lib/mock-data";
+import { getWooProducts } from "@/lib/woocommerce";
 
 export const Route = createFileRoute("/bouquets")({
+  loader: async () => await getWooProducts({ data: "Bouquets" }),
   head: () => ({
     meta: [
       { title: "Balloon Bouquets — Lucy Surprises" },
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/bouquets")({
 });
 
 function BouquetsPage() {
-  const items = PRODUCTS.filter((p) => p.category === "Bouquets");
+  const items = Route.useLoaderData();
   return (
     <>
       <PageHero eyebrow="Shop" title="Balloon Bouquets" description="Hand-tied bouquets ready to make someone's day. Choose a style — we'll deliver the joy." />

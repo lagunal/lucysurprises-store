@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { QuoteCTA } from "@/components/site/QuoteCTA";
-import { PRODUCTS } from "@/lib/mock-data";
+import { getWooProducts } from "@/lib/woocommerce";
 
 export const Route = createFileRoute("/decorations")({
+  loader: async () => await getWooProducts({ data: "Decorations" }),
   head: () => ({
     meta: [
       { title: "Balloon Decorations — Lucy Surprises" },
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/decorations")({
 });
 
 function DecorationsPage() {
-  const items = PRODUCTS.filter((p) => p.category === "Decorations");
+  const items = Route.useLoaderData();
   return (
     <>
       <PageHero eyebrow="Decorations" title="Statement installations" description="Arches, walls and columns designed around your event, delivered and set up by our team." />

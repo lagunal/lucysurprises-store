@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { QuoteCTA } from "@/components/site/QuoteCTA";
-import { PRODUCTS } from "@/lib/mock-data";
+import { getWooProducts } from "@/lib/woocommerce";
 
 export const Route = createFileRoute("/occasions")({
+  loader: async () => await getWooProducts({ data: "Occasions" }),
   head: () => ({
     meta: [
       { title: "Occasions — Lucy Surprises" },
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/occasions")({
 });
 
 function OccasionsPage() {
-  const items = PRODUCTS.filter((p) => p.category === "Occasions");
+  const items = Route.useLoaderData();
   return (
     <>
       <PageHero eyebrow="Occasions" title="Every milestone, celebrated" description="Turn-key balloon packages designed for the moments that matter most." />

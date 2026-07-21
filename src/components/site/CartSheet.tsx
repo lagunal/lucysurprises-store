@@ -86,8 +86,8 @@ export function CartSheet() {
               <span className="text-base font-semibold text-foreground">${subtotal.toFixed(2)}</span>
             </div>
             <Separator />
-            <Button disabled className="w-full" size="lg">
-              Checkout — coming soon
+            <Button className="w-full" size="lg">
+              <a href="https://lucysurprises.com/checkout/">Proceed to checkout</a>
             </Button>
             <Button asChild variant="outline" className="w-full">
               <Link to="/cart">View full cart</Link>
